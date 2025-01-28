@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, Input } from "@angular/core";
 import { RandomNumberService } from "../../services/random-number.service";
 
 @Component({
@@ -8,5 +8,7 @@ import { RandomNumberService } from "../../services/random-number.service";
 	styleUrl: "./hello.component.css"
 })
 export class HelloComponent {
+	@Input()
+	protected name!: string;
 	protected randomNumberService = inject(RandomNumberService);
 }
